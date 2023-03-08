@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+body{
+    background: linear-gradient(45deg, cornflowerblue, white);    width: 100vw;
+    height: max-content;
+    overflow: hidden;
+    background-image: url(./img2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.app-container{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    top: 0;
+    background: rgba(0, 0,0,0.4);
+    backdrop-filter: blur(4px);
+    position: fixed;
+    z-index: 999;
+}
+.images{
+    width: max-content;
+    height: 100vh;
+    margin: 0 auto;
+    bottom: 0;
+}
+
+.images .image img{
+    width: auto;
+    max-width: 80%;
+    height: auto;   
+    max-height: 100%; 
+    display: block;
+    line-height: 0;
+    box-sizing: border-box;
+    padding: 50px 0;
+    user-select: none;
+    pointer-events: none;
+    transition: 0.5s ease;
+}
+.image{
+    width: 55rem;
+    margin: 0rem auto;
+    height: calc(100vh - 16px);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.buttons{
+    width: 100vw;
+    top: 40%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+.left, .right{
+    position: absolute;
+    font-size: 3rem;
+    color: white;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
+    padding: 2rem 3rem;
+    cursor: pointer;
+    transition: 0.5s ease;
+    top: 40%;
+}
+.left{
+    left: 1rem;
+}
+.right{
+    right: 1rem;
+}
+.left:hover, .right:hover{
+    background: rgb(29, 29, 29);
+    transform: scale(1.2);
+    font-size: 3.2rem   ;
+}
+.dots{
+    position: absolute;
+    bottom: 0rem;
+    width: 100vw;
+    background: rgba(0, 0,0,0.9);
+    height: 2rem;
+
+}
+.dot-dots{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2rem;
+    margin: 0.5rem auto;
+}
+.dot{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: gray;
+}
+.active{
+    background-color: white;
+}
+.all-pics{
+    height: max-content;
+    width: 100vw;
+    background: rgba(0, 0,0,0.4);
+    backdrop-filter: blur(4px);
+    column-count: 3;
+    
+    }
+.all-pics .image{
+    width: max-content;
+    margin: 0;
+    cursor: pointer;
+    overflow: hidden;
+    height: max-content;
+    transition: 0.5s ease;
+}
+.all-pics .image:hover img{
+    transform: scale(1.4);
+
+}
+.close-btn{
+    width: 3rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 2rem;
+    top: 4rem;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+.close-btn > div{
+    height: 3px;
+    background-color: white;
+    border-radius: 1rem; 
+    width: 2rem;
+    transition: 0.5s ease;
+}
+.close-btn:hover{
+    transform: scale(1.4);    
+}
+.close-btn:hover > div{
+    background-color: #111;
+}
+.close-btn .fc{
+ transform: rotate(-45deg);
+}
+.close-btn .lc{
+    transform: rotate(45deg);
+}
+.all-pics .image img{
+    width: 400px;
+    height: auto;
+    transition: 0.5s ease;
+
+}
+nav{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 3rem;
+    box-shadow: 0 0 20px rgba(0, 0,0,0.4);
+    background: #111;
+    z-index: 9999;
+    color: white;
+    font-size: 1.4rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1190px) {
+    .all-pics{
+        column-count: 2;
+    }
+}
+@media screen and (max-width: 810px) {
+    .all-pics{
+        column-count: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .left, .right{
+        font-size: 2.5rem;
+        padding: 0.5rem 1.3rem;
+    }
+    .left:hover, .right:hover{
+        transform: scale(1.1);
+        font-size: 2.7rem   ;
+    }
+    .dot{
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+    }
+    .images .image img{
+        max-width: 100%;
+    }
+    .image{
+        width: 25rem;
+
+    }
+    
+}
+@media screen and (max-width: 650px) {
+.left, .right{
+    top: 80%;
+}
+    .dot{
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+    .all-pics .image img{
+        width: 300px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .buttons{
+        top: 80%;
+    }
+        .dot{
+            width: 0.5rem;
+            height: 0.5rem;
+        }
+        .images .image img{
+            max-width: 100%;
+        }
+        .image{
+            width: 20rem;
+        }
+        .all-pics .image img{
+            width: 250px;
+        }
+        
+    }
